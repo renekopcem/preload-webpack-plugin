@@ -15,6 +15,9 @@
  * limitations under the License.
  */
 
+require('object.values').shim();
+require('object.entries').shim();
+
 const assert = require('assert');
 
 const createHTMLElementString = require('./lib/create-html-element-string');

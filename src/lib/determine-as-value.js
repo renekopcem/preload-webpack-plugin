@@ -17,7 +17,7 @@
 
 const assert = require('assert');
 const path = require('path');
-const {URL} = require('url');
+const URL = require('url');
 
 function determineAsValue({optionsAs, href}) {
   assert(href, `The 'href' parameter was not provided.`);
@@ -36,7 +36,7 @@ function determineAsValue({optionsAs, href}) {
       // value based on the suffix of filename.
 
       // We only care about the pathname, so just use any domain when constructing the URL.
-      const url = new URL(href, 'https://example.com');
+      const url = URL.parse(href, 'https://example.com');
       const extension = path.extname(url.pathname);
 
       if (extension === '.css') {
